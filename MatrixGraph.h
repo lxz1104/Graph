@@ -24,6 +24,13 @@ typedef struct {
 Status CreateUDG(MatrixGraph * G);
 
 /**
+ * 创建有向图
+ * @param G 要操作的无向图指针
+ * @return 创建成功，返回SUCCESS；创建失败，返回ERROR
+ */
+Status CreateDG(MatrixGraph * G);
+
+/**
  * 返回某个顶点在顶点集合中的下标
  * @param G 要操作的无向图指针
  * @param vex 要定位的顶点
