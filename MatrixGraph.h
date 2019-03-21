@@ -38,4 +38,10 @@ Status CreateDG(MatrixGraph * G);
  */
 int LocateVex(MatrixGraph * G,VerTexType vex);
 
+/**
+ *  打印邻接矩阵
+ * @param G 要操作的无向图指针
+ */
+void PrintMatGraph(MatrixGraph * G);
+
 #endif //GRAPH001_MATRIXGRAPH_H

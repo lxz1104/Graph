@@ -9,6 +9,27 @@
 #include <assert.h>
 #include <string.h>
 
+//打印邻接矩阵
+void PrintMatGraph(MatrixGraph * G)
+{
+    printf("邻接矩阵:\n");
+    printf("\t");
+    for (int i = 0; i < G->verTexCount; i++)
+    {
+        printf("\t%s", G->verTexs[i]);
+    }
+    printf("\n");
+    for (int i = 0; i < G->verTexCount ; ++i)
+    {
+        printf("\t%s", G->verTexs[i]);
+        for (int j = 0; j < G->verTexCount;++j)
+        {
+            printf("\t%d", G->arcs[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 //创建无向图
 Status CreateUDG(MatrixGraph * G)
 {
@@ -46,6 +67,8 @@ Status CreateUDG(MatrixGraph * G)
         int x = LocateVex(G,vex1);
         int y = LocateVex(G,vex2);
         if(x == -1 || y == -1){
+            free(vex1);
+            free(vex2);
             return ERROR;
         }
 
